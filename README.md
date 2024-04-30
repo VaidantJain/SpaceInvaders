@@ -16,6 +16,6 @@ The Space Invader game is a Python project developed using Pygame for game mecha
 Contributions are welcome! If you have any ideas for improvements or new features, feel free to open an issue or submit a pull request.
 
 # Credits
-Pygame: https://www.pygame.org/
-Tkinter: https://docs.python.org/3/library/tkinter.html
-MySQL Connector/Python: https://dev.mysql.com/doc/connector-python/en/
+1. Pygame: https://www.pygame.org/
+2. Tkinter: https://docs.python.org/3/library/tkinter.html
+3. MySQL Connector/Python: https://dev.mysql.com/doc/connector-python/en/
