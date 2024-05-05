@@ -27,7 +27,7 @@ class Game:
         self.highscore = 0
         self.explosion_sound = pygame.mixer.Sound("Sounds/explosion.ogg")
         self.load_highscore()
-        self.level = 5
+        self.level = 1
         self.max_levels = 5
         self.flag = True
         self.setup_level()

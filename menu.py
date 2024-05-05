@@ -2,6 +2,7 @@ import pygame ,sys
 from button import Button
 import random
 from game import Game
+import webbrowser
 
 pygame.init()
 SCREEN_WIDTH = 750
@@ -42,8 +43,9 @@ def play():
     pygame.time.set_timer(MYSTERYSHIP, random.randint(4000, 8000))
 
     game_started = False
-
+    temp = 0
     while True:
+
         # Checking for events
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
@@ -51,6 +53,7 @@ def play():
                 sys.exit()
             elif event.type == pygame.KEYDOWN:  # Check for key presses
                 if event.key == pygame.K_ESCAPE:
+                    pygame.mixer.music.stop()
                     main_menu()
             if event.type == SHOOT_LASER and game.run:
                 game.alien_shoot_laser()
@@ -77,6 +80,20 @@ def play():
         # UI
         pygame.draw.rect(SCREEN, YELLOW, (10, 10, 780, 780), 2, 0, 60, 60, 60, 60)
         pygame.draw.line(SCREEN, YELLOW, (25, 730), (775, 730), 3)
+
+        if game.run and temp!=game.level:
+            temp=game.level
+            SCREEN.fill(GREY)
+            game.spaceship_group.sprite.lasers_group.empty()
+            for alien in game.aliens_group.sprites():
+                if hasattr(alien, 'lasers_group'):
+                    alien.lasers_group.empty()
+            game.alien_lasers_group.empty()
+            new_level = font.render("LEVEL 0" + str(game.level), False, YELLOW)
+            text_width, text_height = new_level.get_size()
+            SCREEN.blit(new_level, ((SCREEN_WIDTH - text_width/2) // 2, (SCREEN_HEIGHT - text_height/2 +50) // 2))
+            pygame.display.flip()
+            pygame.time.delay(2500)
 
         if game.run:
             level_surface = font.render("LEVEL 0" + str(game.level), False, YELLOW)
@@ -118,15 +135,20 @@ def play():
 
 
 def options():
+    screen_info = pygame.display.Info()
+    background_image = pygame.image.load("login_bkg.png")
+    background_image = pygame.transform.scale(background_image, (screen_info.current_w, screen_info.current_h))
+
     while True:
         OPTIONS_MOUSE_POS = pygame.mouse.get_pos()
 
-        SCREEN.fill("black")
+        SCREEN.blit(background_image, (0, 0))
+        #SCREEN.fill("black")
 
-        LOGIN_BUTTON = Button(image=None, pos=(400, 460),
-                              text_input="LOGIN", font=get_font(75), base_color="White", hovering_color="Green")
+        LOGIN_BUTTON = Button(image=None, pos=(560, 350),
+                              text_input="LOGIN", font=get_font(85), base_color="White", hovering_color="Green")
 
-        OPTIONS_BACK = Button(image=None, pos=(400, 500),
+        OPTIONS_BACK = Button(image=None, pos=(560, 400),
                               text_input="BACK", font=get_font(50), base_color="White", hovering_color="Green")
 
         LOGIN_BUTTON.changeColor(OPTIONS_MOUSE_POS)
@@ -139,8 +161,10 @@ def options():
             if event.type == pygame.QUIT:
                 pygame.quit()
                 sys.exit()
-            if event.type == pygame.MOUSEBUTTONDOWN:
-                if OPTIONS_BACK.checkForInput(OPTIONS_MOUSE_POS):
+            elif event.type == pygame.MOUSEBUTTONDOWN:
+                if LOGIN_BUTTON.checkForInput(pygame.mouse.get_pos()):
+                    webbrowser.open('SI\login\index.html')
+                elif OPTIONS_BACK.checkForInput(pygame.mouse.get_pos()):
                     main_menu()
 
         pygame.display.update()
@@ -149,7 +173,6 @@ def main_menu():
     screen_info = pygame.display.Info()
     BG = pygame.image.load("Untitled design.png")
     BG = pygame.transform.scale(BG, (screen_info.current_w, screen_info.current_h))
-    #SCREEN.blit(BG, (0,0))
     while True:
         SCREEN.blit(BG, (0, 0))
 
@@ -159,11 +182,11 @@ def main_menu():
         MENU_RECT = MENU_TEXT.get_rect(center=(400, 400))
 
         PLAY_BUTTON = Button(image=None, pos=(400, 450),
-                             text_input="PLAY", font=get_font(50), base_color="#d7fcd4", hovering_color="White")
+                             text_input="PLAY", font=get_font(50), base_color="White", hovering_color="Lime Green")
         OPTIONS_BUTTON = Button(image=None, pos=(395, 500),
-                                text_input="LOGIN", font=get_font(50), base_color="#d7fcd4", hovering_color="White")
+                                text_input="LOGIN", font=get_font(50), base_color="White", hovering_color="Lime Green")
         QUIT_BUTTON = Button(image=None, pos=(400, 550),
-                             text_input="QUIT", font=get_font(50), base_color="#d7fcd4", hovering_color="White")
+                             text_input="QUIT", font=get_font(50), base_color="White", hovering_color="Lime Green")
 
         SCREEN.blit(MENU_TEXT, MENU_RECT)
 
