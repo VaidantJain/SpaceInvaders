@@ -1,5 +1,5 @@
 # SpaceInvaders
-The Space Invader game is a Python project developed using Pygame for game mechanics and Tkinter for the front end. It features a classic arcade-style gameplay where players must defend against waves of descending aliens. The game includes dynamic geometric levels, a user login system, and a high score leaderboard stored in an SQL database.
+The Space Invader game is a Python project developed using Pygame for game mechanics. It features a classic arcade-style gameplay where players must defend against waves of descending aliens. The game includes dynamic geometric levels, a user login system, and a high score leaderboard stored in an SQL database.
 
 # Features
 1. Classic arcade-style Space Invader gameplay.
