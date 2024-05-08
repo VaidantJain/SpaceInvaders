@@ -1,8 +1,10 @@
+
 import pygame ,sys
 from button import Button
 import random
 from game import Game
 import webbrowser
+import subprocess
 
 pygame.init()
 SCREEN_WIDTH = 750
@@ -133,7 +135,11 @@ def play():
         pygame.display.update()
         clock.tick(60)
 
-
+def check_close_signal():
+    if os.path.exists("close_signal.txt"):
+        os.remove("close_signal.txt")
+        return True
+    return False
 def options():
     screen_info = pygame.display.Info()
     background_image = pygame.image.load("login_bkg.png")
@@ -163,7 +169,8 @@ def options():
                 sys.exit()
             elif event.type == pygame.MOUSEBUTTONDOWN:
                 if LOGIN_BUTTON.checkForInput(pygame.mouse.get_pos()):
-                    webbrowser.open('SI\login\index.html')
+                    subprocess.Popen(["python", "app.py"])
+                    webbrowser.open('http://127.0.0.1:8080/')
                 elif OPTIONS_BACK.checkForInput(pygame.mouse.get_pos()):
                     main_menu()
 

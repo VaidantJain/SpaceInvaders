@@ -1,0 +1,677 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+*
+{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Quicksand', sans-serif;
+}
+body
+{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: #000;
+}
+section
+{
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2px;
+  flex-wrap: wrap;
+  overflow: hidden;
+}
+section::before
+{
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(#000,#0f0,#000);
+  animation: animate 5s linear infinite;
+}
+@keyframes animate
+{
+  0%
+  {
+    transform: translateY(-100%);
+  }
+  100%
+  {
+    transform: translateY(100%);
+  }
+}
+section span
+{
+  position: relative;
+  display: block;
+  width: calc(6.25vw - 2px);
+  height: calc(6.25vw - 2px);
+  background: #181818;
+  z-index: 2;
+  transition: 1.5s;
+}
+section span:hover
+{
+  background: #0f0;
+  transition: 0s;
+}
+
+section .login
+{
+  position: absolute;
+  width: 400px;
+  background: #222;
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+  border-radius: 4px;
+  box-shadow: 0 15px 35px rgba(0,0,0,9);
+}
+section .login .content
+{
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 40px;
+}
+section .login .content h2
+{
+  font-size: 2em;
+  color: #0f0;
+  text-transform: uppercase;
+}
+section .login .content .form
+{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+section .login .content .form .inputBox
+{
+  position: relative;
+  width: 100%;
+}
+section .login .content .form .inputBox input
+{
+  position: relative;
+  width: 100%;
+  background: #333;
+  border: none;
+  outline: none;
+  padding: 25px 10px 7.5px;
+  border-radius: 4px;
+  color: #fff;
+  font-weight: 500;
+  font-size: 1em;
+}
+section .login .content .form .inputBox i
+{
+  position: absolute;
+  left: 0;
+  padding: 15px 10px;
+  font-style: normal;
+  color: #aaa;
+  transition: 0.5s;
+  pointer-events: none;
+}
+.login .content .form .inputBox input:focus ~ i,
+.login .content .form .inputBox input:valid ~ i
+{
+  transform: translateY(-7.5px);
+  font-size: 0.8em;
+  color: #fff;
+}
+.login .content .form .links
+{
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.login .content .form .links a
+{
+  color: #fff;
+  text-decoration: none;
+}
+.login .content .form .links a:nth-child(2)
+{
+  color: #0f0;
+  font-weight: 600;
+}
+.login .content .form .inputBox input[type="submit"]
+{
+  padding: 10px;
+  background: #0f0;
+  color: #000;
+  font-weight: 600;
+  font-size: 1.35em;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+}
+input[type="submit"]:active
+{
+  opacity: 0.6;
+}
+@media (max-width: 900px)
+{
+  section span
+  {
+    width: calc(10vw - 2px);
+    height: calc(10vw - 2px);
+  }
+}
+@media (max-width: 600px)
+{
+  section span
+  {
+    width: calc(20vw - 2px);
+    height: calc(20vw - 2px);
+  }
+}
+
+/* Styles for sign-up form */
+section .signup {
+    position: absolute;
+    width: 400px;
+    background: #222;
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    border-radius: 4px;
+    box-shadow: 0 15px 35px rgba(0,0,0,9);
+  }
+
+  section .signup .content {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  section .signup .content h2 {
+    font-size: 2em;
+    color: #0f0;
+    text-transform: uppercase;
+  }
+
+  section .signup .content .form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+  }
+
+  section .signup .content .form .inputBox {
+    position: relative;
+    width: 100%;
+  }
+
+  section .signup .content .form .inputBox input {
+    position: relative;
+    width: 100%;
+    background: #333;
+    border: none;
+    outline: none;
+    padding: 25px 10px 7.5px;
+    border-radius: 4px;
+    color: #fff;
+    font-weight: 500;
+    font-size: 1em;
+  }
+
+  section .signup .content .form .inputBox i {
+    position: absolute;
+    left: 0;
+    padding: 15px 10px;
+    font-style: normal;
+    color: #aaa;
+    transition: 0.5s;
+    pointer-events: none;
+  }
+
+  .signup .content .form .inputBox input:focus ~ i,
+  .signup .content .form .inputBox input:valid ~ i {
+    transform: translateY(-7.5px);
+    font-size: 0.8em;
+    color: #fff;
+  }
+
+  .signup .content .form .links {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .signup .content .form .links a {
+    color: #fff;
+    text-decoration: none;
+  }
+
+  .signup .content .form .links a:nth-child(2) {
+    color: #0f0;
+    font-weight: 600;
+  }
+
+  .signup .content .form .inputBox input[type="submit"] {
+    padding: 10px;
+    background: #0f0;
+    color: #000;
+    font-weight: 600;
+    font-size: 1.35em;
+    letter-spacing: 0.05em;
+    cursor: pointer;
+  }
+
+  input[type="submit"]:active {
+    opacity: 0.6;
+  }
+
+
+ section .forgot-password {
+    position: absolute;
+    width: 400px;
+    background: #222;
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    border-radius: 4px;
+    box-shadow: 0 15px 35px rgba(0,0,0,9);
+  }
+
+  section .forgot-password .content {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  section .forgot-password .content h2 {
+    font-size: 2em;
+    color: #0f0;
+    text-transform: uppercase;
+  }
+
+  section .forgot-password .content .form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+  }
+
+  section .forgot-password .content .form .inputBox {
+    position: relative;
+    width: 100%;
+  }
+
+  section .forgot-password .content .form .inputBox input {
+    position: relative;
+    width: 100%;
+    background: #333;
+    border: none;
+    outline: none;
+    padding: 25px 10px 7.5px;
+    border-radius: 4px;
+    color: #fff;
+    font-weight: 500;
+    font-size: 1em;
+  }
+
+  section .forgot-password .content .form .inputBox i {
+    position: absolute;
+    left: 0;
+    padding: 15px 10px;
+    font-style: normal;
+    color: #aaa;
+    transition: 0.5s;
+    pointer-events: none;
+  }
+
+  .forgot-password .content .form .inputBox input:focus ~ i,
+  .forgot-password .content .form .inputBox input:valid ~ i {
+    transform: translateY(-7.5px);
+    font-size: 0.8em;
+    color: #fff;
+  }
+
+  .forgot-password .content .form .inputBox input[type="submit"] {
+    padding: 10px;
+    background: #0f0;
+    color: #000;
+    font-weight: 600;
+    font-size: 1.35em;
+    letter-spacing: 0.05em;
+    cursor: pointer;
+  }
+
+  input[type="submit"]:active {
+    opacity: 0.6;
+  }
+
+  @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+*
+{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Quicksand', sans-serif;
+}
+
+body
+{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: #000;
+}
+
+section
+{
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2px;
+  flex-wrap: wrap;
+  overflow: hidden;
+}
+section::before
+{
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(#000,#0f0,#000);
+  animation: animate 5s linear infinite;
+}
+@keyframes animate
+{
+  0%
+  {
+    transform: translateY(-100%);
+  }
+  100%
+  {
+    transform: translateY(100%);
+  }
+}
+section span
+{
+  position: relative;
+  display: block;
+  width: calc(6.25vw - 2px);
+  height: calc(6.25vw - 2px);
+  background: #181818;
+  z-index: 2;
+  transition: 1.5s;
+}
+section span:hover
+{
+  background: #0f0;
+  transition: 0s;
+}
+
+section .ranking
+{
+  position: absolute;
+  height : fit-content;
+  width: 450px;
+  background: #222;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+  border-radius: 4px;
+  box-shadow: 0 15px 35px rgba(0,0,0,9);
+}
+
+#header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2.5rem 2rem;
+}
+
+section .ranking .content h1
+{
+  font-size: 25px;
+  color: #0f0;
+  text-transform: uppercase;
+  align-self: center;
+  margin-left: -3px;
+}
+
+section .ranking .content .share {
+  width: 50px;
+  height: 30px;
+  background-color: #00ff00;
+  border: 0;
+  border-bottom: 0.2rem solid #228b22;
+  border-radius: 2rem;
+  cursor: pointer;
+}
+
+.share:active {
+  border-bottom: 0;
+}
+
+.share i {
+  color: #000000;
+  font-size: 24px;
+}
+
+ .ranking h1 {
+  font-family: "Rubik", sans-serif;
+  font-size: 1.7rem;
+  color: #141a39;
+  text-transform: uppercase;
+  cursor: default;
+}
+
+#leaderboard {
+  width: 100%;
+  position: relative;
+}
+
+.ranking .table {
+  width: 100%;
+  border-collapse: collapse;
+  border-style: none;
+  table-layout: fixed;
+  cursor: cell;
+  border-color: transparent;
+  border-width: 0;
+}
+
+tr {
+  transition: all 0.2s ease-in-out;
+  border-radius: 0.2rem;
+  border-color: transparent;
+}
+
+tr:not(:first-child):hover {
+  background-color: #1BE41B;
+  transform: scale(1.1);
+  -webkit-box-shadow: 0px 5px 15px 8px #000000;
+  box-shadow: 0px 5px 15px 8px #000000;
+  border-color: initial;
+}
+
+tr:nth-child(odd) {
+  background-color: #222;
+}
+
+tr:nth-child(1) {
+  color: #FFFFFF;
+}
+
+tr:hover td {
+  border-color: transparent; /* Set border color of table cells to transparent on hover */
+}
+
+.ranking td {
+  height: 3.5rem;
+  font-family: "Rubik", sans-serif;
+  font-size: 1.2rem;
+  padding: 1rem 2rem;
+  position : relative;
+}
+
+.ranking .number {
+  width: 10px;
+  font-size: 25px;
+  font-weight: bolder;
+  text-align: center;
+  color: #FFFFFF;
+}
+
+.ranking .name {
+  text-align: left;
+  font-size: 15px;
+  text-align-all : center;
+  color: #FFFFFF;
+}
+
+.ranking .points {
+  font-weight: bold;
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
+  text-align : center;
+  bottom : -4px;
+  color: #FFFFFF;
+}
+
+.ranking .points:first-child {
+   width: 10rem;
+}
+
+.ranking .gold-medal {
+  height: 3rem;
+  margin-right: -5rem;
+  margin-left: 2rem;
+  align-self: center ;
+  position: relative;
+}
+
+.ranking .ribbon {
+  width: 470px;
+  height: 4.5rem;
+  top: -0.2rem;
+  background-color: #1BE41B;
+  left : -85px;
+  position: absolute;
+  -webkit-box-shadow: 0px 10px 8px -4px #7a7a7d;
+  box-shadow: 0px 15px 11px -6px #7a7a7d;
+  align-self: center;
+}
+
+.ranking .ribbon::before {
+  content: "";
+  height: 1.5rem;
+  width: 1.5rem;
+  bottom: -0.75rem;
+  left: 0.30rem;
+  transform: rotate(45deg);
+  background-color: #1BE41B ;
+  color: #1BE41B;
+  position: absolute;
+  z-index: -1;
+}
+
+.ranking .ribbon::after {
+  content: "";
+  height: 1.5rem;
+  width: 1.5rem;
+  bottom: -0.75rem;
+  right: 0.35rem;
+  transform: rotate(45deg);
+  background-color: transparent;
+  position: absolute;
+  z-index: -1;
+}
+
+#buttons {
+  width: 100%;
+  margin-top: 3rem;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+
+  .exit {
+  width: 120px;
+  height: 30px;
+  font-family: "Rubik", sans-serif;
+  font-size: 18px;
+  text-transform: uppercase;
+  color: #00ff00;
+  border: 0;
+  background-color: #181818;
+  border-radius: 2rem;
+  cursor: pointer;
+ }
+ .exit:hover {
+  border: 0.1rem solid #00ff00;
+ }
+
+.continue {
+  width: 120px;
+  height: 30px;
+  font-family: "Rubik", sans-serif;
+  font-size: 18px;
+  color: #00ff00;
+  text-transform: uppercase;
+  background-color: #181818;
+  border: 0;
+  border-radius: 2rem;
+  cursor: pointer;
+}
+.continue:hover {
+  border: 0.1rem solid #00ff00;
+}
+.continue:active {
+  border-bottom: 0;
+}
+
+  @media (max-width: 900px) {
+    section span {
+      width: calc(10vw - 2px);
+      height: calc(10vw - 2px);
+    }
+  }
+
+  @media (max-width: 600px) {
+    section span {
+      width: calc(20vw - 2px);
+      height: calc(20vw - 2px);
+    }
+  }

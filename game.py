@@ -1,3 +1,5 @@
+import json
+
 import pygame, random
 from spaceship import Spaceship
 from obstacle import Obstacle
@@ -269,7 +271,7 @@ class Game:
     def reset(self):
         self.run = True
         self.lives = 3
-        self.level = 1
+        self.level = 5
         self.spaceship_group.sprite.reset()
         self.aliens_group.empty()
         self.alien_lasers_group.empty()
@@ -288,6 +290,6 @@ class Game:
     def load_highscore(self):
         try:
             with open("highscore.txt", "r") as file:
-                self.highscore = int(file.read())
+               self.highscore=int(file.read())
         except FileNotFoundError:
             self.highscore = 0
