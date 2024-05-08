@@ -17,5 +17,5 @@ Contributions are welcome! If you have any ideas for improvements or new feature
 
 # Credits
 1. Pygame: https://www.pygame.org/
-2. Tkinter: https://docs.python.org/3/library/tkinter.html
+2. Tkinter: https://flask.palletsprojects.com/en/3.0.x/
 3. MySQL Connector/Python: https://dev.mysql.com/doc/connector-python/en/
