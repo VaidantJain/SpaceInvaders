@@ -4,7 +4,7 @@ The Space Invader game is a Python project developed using Pygame for game mecha
 # Features
 1. Classic arcade-style Space Invader gameplay.
 2. Dynamic geometric levels to enhance gameplay.
-3. User login system using Tkinter for GUI.
+3. User login system using HTML and CSS for GUI and Flask for backend.
 4. High score leaderboard stored in an SQL database.
 5. User-friendly interface and gameplay.
 # Usage
