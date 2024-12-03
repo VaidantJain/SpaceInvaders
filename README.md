@@ -14,6 +14,9 @@ The Space Invader game is a Python project developed using Pygame for game mecha
 4. Your high score will be recorded in the database and displayed on the leaderboard.
 # Contributing
 Contributions are welcome! If you have any ideas for improvements or new features, feel free to open an issue or submit a pull request.
+# Photos
+![Link to screenshots of the game's UI]https://github.com/user-attachments/assets/b36404c5-8d7e-4c7b-a3a3-4b3f0484b2e2)
+
 
 # Credits
 1. Pygame: https://www.pygame.org/
